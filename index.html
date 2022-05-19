@@ -20,6 +20,8 @@
     <!-- custom links -->
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.js"></script>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.13.1/themes/base/jquery-ui.css">
 
     <!-- swipper -->
     <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css" />
@@ -82,7 +84,7 @@
                         <a href="">VISA</a>
                     </li>
                     <li>
-                        <a href="">TOUR</a>
+                        <a href="">COMMUNICATIONS</a>
                     </li>
                 </ul>
             </nav>
@@ -91,7 +93,7 @@
     <!-- end of top navigation -->
 
     <section>
-        <div class="container-jumbotron p-4 bg-light swiper-main-container">
+        <div class="container-jumbotron p-4 swiper-main-container">
             <!-- slides -->
             <div class="swiper">
                 <div class="swiper-wrapper">
@@ -119,14 +121,14 @@
                             aria-selected="true">HOTEL</button>
                     </li>
                     <li class="nav-item" role="presentation">
-                        <button class="nav-link" id="pills-profile-tab" data-bs-toggle="pill"
+                        <button class="nav-link reservation-tab-link" id="pills-profile-tab" data-bs-toggle="pill"
                             data-bs-target="#pills-profile" type="button" role="tab" aria-controls="pills-profile"
                             aria-selected="false">TOUR</button>
                     </li>
                     <li class="nav-item" role="presentation">
-                        <button class="nav-link" id="pills-contact-tab" data-bs-toggle="pill"
+                        <button class="nav-link reservation-tab-link" id="pills-contact-tab" data-bs-toggle="pill"
                             data-bs-target="#pills-contact" type="button" role="tab" aria-controls="pills-contact"
-                            aria-selected="false">TOUR</button>
+                            aria-selected="false">FLIGHT</button>
                     </li>
                 </ul>
                 <div class="tab-content" id="pills-tabContent">
@@ -134,29 +136,149 @@
                         aria-labelledby="pills-hotel-tab">
                         <div class="reservation-inputs">
                             <input type="text" name="" id="hotel-input-text" placeholder="Hotel name, location etc...">
-                        <input type="date" name="" id="hotel-input-date" >
-                        <select name="" id="hotel-select-room">
-                            <option value="">1 Oda</option>
-                            <option value="">2 Oda</option>
-                            <option value="">3 Oda</option>
-                            <option value="">4 Oda</option>
-                            <option value="">5 Oda</option>
-                            <option value="">6 Oda</option>
-                        </select>
-                        <button type="button" class="search-hotel-btn">Search</button>
+                            <input type="text" name="" id="datepicker" class="hotel-input-date"
+                                placeholder="Select a date">
+                            <select name="" id="hotel-select-room">
+                                <option value="">1 Oda</option>
+                                <option value="">2 Oda</option>
+                                <option value="">3 Oda</option>
+                                <option value="">4 Oda</option>
+                                <option value="">5 Oda</option>
+                                <option value="">6 Oda</option>
+                            </select>
+                            <button type="button" class="search-hotel-btn"><i
+                                    class="fa-solid fa-magnifying-glass me-2 "></i>Search</button>
                         </div>
                     </div>
-                    <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
-                        ...</div>
+                    <div class="tab-pane fade bg-light p-4" id="pills-profile" role="tabpanel"
+                        aria-labelledby="pills-profile-tab">
+                        <div class="reservation-inputs">
+                            <input type="text" name="" id="tour-input-text"
+                                placeholder="country, city, region or name of tour">
+
+                            <button type="button" class="search-hotel-btn"><i
+                                    class="fa-solid fa-magnifying-glass me-2 "></i>Search</button>
+                        </div>
+                    </div>
                     <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">
-                        ...</div>
+                        <div class="reservation-inputs">
+                            <input type="text" name="" id="flight-input-text"
+                                placeholder="country, city, region or name of tour">
+
+                            <button type="button" class="search-hotel-btn"><i
+                                    class="fa-solid fa-magnifying-glass me-2 "></i>Search</button>
+                        </div>
+                    </div>
                 </div>
 
             </div>
         </div>
     </section>
 
+    <!-- Popular tours -->
+    <section>
+        <div class="container ">
+            <div class="row">
+                <div class="col-md-12 col-sm-12 col-lg-8 p-2">
+                    <h3>POPULAR TOURS</h3>
+                    <div class="container p-4">
+                        <div class="row tour-cards d-flex mt-4">
+                            <div class="col-md-12 col-lg-5 col-sm-12 me-3 rounded-3  mb-5 tour-card-container">
+                                <div class="container-jumbotron">
+                                    <img src="/assets/images/tour1.jpg" alt="">
+                                </div>
+                                <div class="container p-2 tour-details">
+                                    <p>Visit cities like Ankara, Istanbul and more.</p>
+                                    <p>2000TL-3000TL</p>
+                                    <p>2-6 days</p>
+                                    <p><i class="fa-solid fa-location-dot"></i> Egypt</p>
+                                </div>
+                                <div class="dot">
+                                    <p><i class="fa-solid fa-circle-info"></i></p>
+                                </div>
+                                
+                            </div>
+                            <div class="col-md-12 col-lg-5 col-sm-12 me-3 rounded-3  mb-5 tour-card-container">
+                                <div class="container-jumbotron">
+                                    <img src="/assets/images/tour2.jpg" alt="">
+                                </div>
+                                <div class="container p-2 tour-details">
+                                    <p>Visit cities like Ankara, Istanbul and more.</p>
+                                    <p>2000TL-3000TL</p>
+                                    <p>2-6 days</p>
+                                    <p><i class="fa-solid fa-location-dot"></i> Indonesia</p>
+                                </div>
+                                <div class="dot">
+                                    <p><i class="fa-solid fa-circle-info"></i></p>
+                                </div>
+                               
+                            </div>
+                            <div class="col-md-12 col-lg-5 col-sm-12 me-3 rounded-3  mb-5 tour-card-container">
+                                <div class="container-jumbotron">
+                                    <img src="/assets/images/tour1.jpg" alt="">
+                                </div>
+                                <div class="container p-2 tour-details">
+                                    <p>Visit cities like Ankara, Istanbul and more.</p>
+                                    <p>2000TL-3000TL</p>
+                                    <p>2-6 days</p>
+                                    <p><i class="fa-solid fa-location-dot"></i> America</p>
+                                </div>
+                                <div class="dot">
+                                    <p><i class="fa-solid fa-circle-info"></i></p>
+                                </div>
+                                
+                            </div>
 
+
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-12 col-sm-12 col-lg-4 p-2">
+                    <h3>UPCOMING TOURS</h3>
+                    <div class="container bg-white p-4 border rounded upcoming-tour">
+                        <div class="row mb-3 border-bottom">
+                            <div class="col-md-3">
+                                <img src="/assets/images/tour1.jpg" alt="" width="60" height="60" class="rounded-circle border">
+                            </div>
+                            <div class="col-md-8">
+                                <h5>Tanzania tour.</h5>
+                                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>
+                            </div>
+                        </div>
+                        <div class="row mb-3 border-bottom">
+                            <div class="col-md-3">
+                                <img src="/assets/images/tour1.jpg" alt="" width="60" height="60" class="rounded-circle border">
+                            </div>
+                            <div class="col-md-8">
+                                <h5>Tanzania tour.</h5>
+                                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>
+                            </div>
+                        </div>
+                        <div class="row mb-3 border-bottom">
+                            <div class="col-md-3">
+                                <img src="/assets/images/tour1.jpg" alt="" width="60" height="60" class="rounded-circle border">
+                            </div>
+                            <div class="col-md-8">
+                                <h5>Tanzania tour.</h5>
+                                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>
+                            </div>
+                        </div>
+                        <div class="row mb-3 border-bottom">
+                            <div class="col-md-3">
+                                <img src="/assets/images/tour1.jpg" alt="" width="60" height="60" class="rounded-circle border">
+                            </div>
+                            <div class="col-md-8">
+                                <h5>Tanzania tour.</h5>
+                                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- popular tours -->
 
 
     <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
