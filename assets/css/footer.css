@@ -1,0 +1,71 @@
+.frst-name{
+    color: var(--theme-white);
+    margin-right: 0;
+}
+.scnd-name{
+    color: var(--theme-color);
+    margin-left: 0;
+}
+
+.footer{
+    color: var(--theme-white);
+    transition: 0.35s;
+}
+
+.about-bwinto{
+    color: var(--theme-white);
+    list-style: none;
+    
+}
+.about-bwinto p{
+    margin-bottom: 2px;
+    
+}
+
+.social-links p{
+    color: var(--theme-white);
+    margin-bottom: 2px;
+}
+.social-links ul{
+    list-style: none;
+    /* margin-top: 0;
+    padding: 0px */
+
+}
+
+.social-links li a{
+    text-decoration: none;
+    color: var(--theme-white)
+}
+.social-links li a i{
+    color: var(--theme-color);
+}
+
+.footer-products{
+    list-style: none;
+}
+.footer-products p{
+    margin-bottom: 2px;
+}
+
+.footer-payment-details{
+    list-style: none;
+
+}
+.footer-payment-details ul{
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    padding: 0;
+    margin: 0;
+
+}
+
+.footer ul li a:hover{
+    color: var(--theme-color)
+}
+.footer ul li a:hover i{
+    color: var(--theme-blue)
+}
+

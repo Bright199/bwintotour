@@ -14,3 +14,7 @@
     height: 90%;
     object-fit: cover;
   }
+  .swiper-pagination-bullet {
+   
+    background-color: var(--theme-blue) !important;
+}

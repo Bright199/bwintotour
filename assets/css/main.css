@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap");
 
+/* custom theme css */
 * {
   margin: 0;
   padding: 0;
@@ -16,28 +17,25 @@
 body {
   font-family: "Montserrat", sans-serif !important;
 }
-/* placeholders */
-::-webkit-input-placeholder {
-  padding: 10px;
-  font-size: 14px;
+
+.btn {
+  padding: 5px 15px !important; 
+  background-color: var(--theme-color) !important;
+  color: white !important;
+  border: none !important;
+  border-radius: 0 !important;
+  transition: 0.35s;
+}
+.btn:hover {
+ opacity: .8 !important;
 }
 
-::-moz-placeholder {
-  padding: 10px;
-  font-size: 14px;
+.form-control:focus{
+  outline: none;
+  box-shadow: none;
 }
 
-:-ms-input-placeholder {
-  padding: 10px;
-  font-size: 14px;
-}
-
-:-moz-placeholder {
-  padding: 10px;
-  font-size: 14px;
-}
-
-/* placeholders */
+/* custom css */
 
 /* date picker*/
 .ui-widget {
@@ -51,6 +49,9 @@ body {
 .bg-light {
   background-color: var(--theme-white) !important;
 }
+.bg-black {
+  background-color: var(--theme-black) !important;
+}
 
 .text-red {
   color: var(--theme-color);
@@ -59,11 +60,15 @@ body {
 .text-black {
   color: var(--theme-black) !important;
 }
+.text-blue {
+  color: var(--theme-blue) !important;
+}
 
 /* home css */
 .logo-link {
   text-decoration: none;
   text-align: center;
+  padding: 15px;
 }
 
 .logo-container {
@@ -72,13 +77,13 @@ body {
 }
 
 .first-name {
-  font-size: 30px;
+  font-size: 18px;
   color: var(--theme-black);
   font-weight: 400;
 }
 
 .second-name {
-  font-size: 40px;
+  font-size: 25px;
   color: var(--theme-black);
   font-weight: 600;
   color: var(--theme-color);
@@ -96,7 +101,7 @@ body {
   margin-top: 9px;
   -webkit-transition: width 0.35s ease-in-out;
   transition: width 0.35s ease-in-out;
-  border: 1px solid var(--theme-color);
+  border: 1px solid var(--theme-blue);
   border-radius: 25px;
 }
 
@@ -115,26 +120,27 @@ body {
   border: none;
   border-radius: 25px;
   padding: 5px 10px;
-  background-color: var(--theme-color);
+  background-color: var(--theme-blue);
   color: var(--theme-white);
   position: absolute;
-  right: 2%;
-  top: 14px;
+  right: 1%;
+  top: 15px;
   -webkit-transition: 0.35s;
   transition: 0.35s;
 }
 
 .login-container .login-container-dropdown {
   display: flex;
-  justify-content: center;
   list-style: none;
-  padding: 15px;
+  flex-wrap:  wrap;
+  padding: 15px 18px;
+  font-size: 14px;
 }
 
 .login-link {
   text-decoration: none;
   color: var(--theme-black);
-  padding: 15px 10px;
+  padding: 0px 5px
 }
 
 .login-link i {
@@ -178,7 +184,6 @@ body {
 
 .login-dropdown-container {
   background-color: var(--theme-white);
-  padding: 5px;
   display: flex;
   justify-content: center;
   position: relative;
@@ -278,6 +283,7 @@ body {
 #tour-input-text {
   border: 1px solid var(--theme-color);
   padding: 5px;
+  width: 420px;
 }
 
 #tour-input-text:focus {
@@ -314,15 +320,16 @@ body {
 
 .tour-card-container {
   height: 380px;
+  
+  overflow: auto;
   padding: 5px;
-  transition: 0.35s;
-  position: relative;
-  box-shadow: 5px 5px 18px 1px rgb(146, 146, 146, .6);
+  transition: 0.1s;
+  box-shadow: 3px 3px 15px 1px rgb(146, 146, 146, .3);
 }
 .tour-card-container:hover {
   cursor: pointer;
   font-size: 14px;
-  box-shadow: 0px 0px 1px 2px rgb(146, 146, 146, .3);
+  box-shadow: 0px 0px 8px 1px rgb(146, 146, 146, .3);
 }
 .tour-card-container .tour-details p {
   margin-bottom: 2px;
@@ -339,15 +346,15 @@ p:nth-child(3) {
   color: var(--theme-color);
   font-size: 22px;
 }
-.tour-card-container div img {
+.tour-card-container .tour-image-container img {
   width: 100%;
-  height: 220px;
+  height: 100%;
 }
 
 
 
 .tour-card-container .dot {
-  background: var(--theme-white);
+  background: white;
   position: absolute;
   border-radius: 50%;
   top: -20px;
@@ -368,6 +375,18 @@ p:nth-child(3) {
     color: var(--theme-color);
 }
 @media only screen and (max-width: 768px) {
+  .navigation-links {
+    display: none;
+}
+  .top-search-input {
+    width: 450px;
+    padding: 10px 15px;
+    border: 1px solid var(--theme-blue);
+    border-radius: 25px;
+}
+  .reservation-tabs{
+    display: none;
+  }
   .logo-container {
     padding: 20px;
   }
@@ -403,18 +422,94 @@ p:nth-child(3) {
     font-size: 14px;
     flex-direction: row row-reverse;
   }
+  .swiper-button-next:after, .swiper-button-prev:after {
+    display:none
+}
 
-  .navigation-links {
-    display: grid;
-  }
-
-  .navigation-links li {
-    padding: 2px;
-    font-size: 14px;
-  }
 }
 
 .upcoming-tour{
     height: 400px;
     overflow-y: auto;
+}
+.tour-image-container{
+  width: 100%;
+  height: 50%;
+}
+
+.show-more-tours{
+  border: 1px solid var(--theme-color);
+  border-radius: 55px;
+  background-color: white;
+  padding: 15px 30px 12px;
+  color: var(--theme-color);
+  text-decoration: none;
+  transition: .35s
+}
+
+.show-more-tours:hover{
+  color: var(--theme-white);
+  background-color: var(--theme-color);
+}
+.tour-dropdown-link a{
+  position: relative;
+}
+
+.tour-dropdown-link:hover .tour-dropdown-content {
+  display: block
+}
+.tour-dropdown-content {
+  display: none;
+  position: absolute;
+  width:  100%;
+  background-color: white;
+  height: 450px;
+  /* overflow: auto; */
+  margin: 0 auto;
+  z-index: 10;
+  /* border-top: 1px solid var(--theme-blue); */
+  list-style: none;
+  left: 0;
+  right: 0;
+  top: 112px;
+  box-shadow: 0px 0px 15px -5px rgb(51, 51, 51, 0.1);
+}
+
+.tour-dropdown-content i{
+  color: var(--theme-blue);
+}
+.tour-dropdown-content li a:hover{
+  color: var(--theme-blue);
+  font-size: 18px;
+}
+.hotel-dropdown-link a{
+  position: relative;
+}
+
+.hotel-dropdown-link:hover .hotel-dropdown-content {
+  display: block
+}
+.hotel-dropdown-content {
+  display: none;
+  position: absolute;
+  width:  100%;
+  background-color: white;
+  height: 450px;
+  /* overflow: auto; */
+  margin: 0 auto;
+  z-index: 10;
+  /* border-top: 1px solid var(--theme-blue); */
+  list-style: none;
+  left: 0;
+  right: 0;
+  top: 112px;
+  box-shadow: 0px 0px 15px -5px rgb(51, 51, 51, 0.1);
+}
+
+.hotel-dropdown-content i{
+  color: var(--theme-blue);
+}
+.hotel-dropdown-content li a:hover{
+  color: var(--theme-blue);
+  font-size: 18px;
 }
